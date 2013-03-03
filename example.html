@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="qr.js"></script>
+    </head>
+    <body>
+        <canvas id="qr-canvas" width="300" height="300"></canvas>
+        <br>
+        <input id="input" onchange="refresh()" style="margin-left:50px"> <span id="bench"></span>
+        <script>
+            QR.canvas = document.getElementById('qr-canvas')
+            QR.draw('https://github.com/yyx990803/QR.js')
+
+            var input = document.getElementById('input'),
+                bench = document.getElementById('bench')
+            function refresh () {
+                var s = Date.now()
+                QR.draw(input.value)
+                bench.textContent = (Date.now() - s) + 'ms'
+            }
+        </script>
+    </body>
+</html>
