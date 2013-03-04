@@ -9,9 +9,13 @@
         <canvas id="qr-canvas" width="300" height="300"></canvas>
         <br>
         <input id="input" onchange="refresh()" style="margin-left:50px"> <span id="bench"></span>
+        <br>
         <script>
             QR.canvas = document.getElementById('qr-canvas')
             QR.draw('https://github.com/yyx990803/QR.js')
+
+            QR.size = 300
+            document.body.appendChild(QR.makeImage('test'))
 
             var input = document.getElementById('input'),
                 bench = document.getElementById('bench')

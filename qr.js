@@ -771,19 +771,19 @@ var QR = (function () {
 
         },
 
-        makeImage: function (string, size, ecc) {
-
+        toDataURL: function (string, size, ecc) {
             var canvas = document.createElement('canvas');
             canvas.width = size || _size || 300;
             canvas.height = canvas.width;
-
             api.draw(string, canvas, canvas.width, ecc);
+            return canvas.toDataURL();
+        },
 
+        makeImage: function (string, size, ecc) {
             var img = new Image();
-            img.src = canvas.toDataURL();
+            img.src = api.toDataURL(string, size, ecc);
 
             return img;
-
         }
     }
 

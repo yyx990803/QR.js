@@ -45,9 +45,10 @@ Arguments:
 
 ``` js
 QR.makeImage(string [, size] [, ecclevel])
+QR.toDataURL(string [, size] [, ecclevel])
 ```
 
-Returns an image DOM element.
+Returns an image DOM element, or get the DataURL string.
 
 Arguments:
 
